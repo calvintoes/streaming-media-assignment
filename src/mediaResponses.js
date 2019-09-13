@@ -1,19 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-const getParty = (req, res) => {
-  loadFile(req, res, '../client/party.mp4', 'video/mp4');
-};
-
-const getBling = (req, res) => {
-  loadFile(req, res, '../client/bling.mp3', 'audio/mpeg');
-};
-
-const getBird = (req, res) => {
-  loadFile(req, res, '../client/bird.mp4', 'video/mp4');
-}
-
-
 const loadFile = (req, res, dir, type) => {
   const file = path.resolve(__dirname, dir);
 
@@ -63,6 +50,19 @@ const loadFile = (req, res, dir, type) => {
     return stream;
   });
 };
+
+
+const getParty = (req, res) => {
+  loadFile(req, res, '../client/party.mp4', 'video/mp4');
+};
+
+const getBling = (req, res) => {
+  loadFile(req, res, '../client/bling.mp3', 'audio/mpeg');
+};
+
+const getBird = (req, res) => {
+  loadFile(req, res, '../client/bird.mp4', 'video/mp4');
+}
 
 
 module.exports = {
